@@ -142,6 +142,29 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
       false);
   };
 
+  function builfMenuItemsViewHtml(categoryMenuItems,
+                                  menuItemsTitleHtml,
+                                  menuItemsHtml){
+    
+    menuItemsTitleHtml = insertProperty(menuItemsTitleHtml, "name", categoryMenuItems.category.name);
+
+    menuItemsTitleHtml = insertProperty(menuItemsTitleHtml, "special_instrunctions", categoryMenuItems.category.special_instructions);
+
+    let finalHtml = menuItemsTitleHtml;
+    finalHtml += '<section class="row">';
+
+    let menuItems = categoryMenuItems.menu_items;
+    let catShortName = categoryMenuItems.category.short_name;
+    for(let i=0; i<menuItems.length; i++) {
+      let html = menuItemsHtml;
+      html = insertProperty(html, "short_name", menuItems[i].short_name);
+      html = insertProperty(html, "catShortName", catShortName);
+      html = insertProperty(html, "price_small", menuItems[i].price_small);
+      html = insertProperty(html, "price_small", menuItems[i].price_small);
+      html = insertProperty(html, "price_small", menuItems[i].price_small);
+      html = insertProperty(html, "price_small", menuItems[i].price_small);
+    }
+  };
 
   global.$dc = dc;
 })(window);
