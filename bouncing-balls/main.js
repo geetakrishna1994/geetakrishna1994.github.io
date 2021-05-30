@@ -66,7 +66,7 @@ class Ball {
 }
 
 let balls = [];
-while(balls.length < 4) {
+while(balls.length < 25) {
     let size = random(10, 20);
     let ball = new Ball(random(size, width - size),
                         random(size, height - size),
